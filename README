@@ -1,0 +1,7 @@
+Dockerfules for deploying MongoDB in simple, replicated and sharded configurations. In all cases, the restaurants dataset is imported to the database. Upon attachment, a bash shell is used as entrypoint.
+
+Created to be used for educational purposes.
+
+General usage:
+    docker build -t [image name] .
+    docker run -it [image name]
