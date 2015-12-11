@@ -23,7 +23,7 @@ RUN echo "mongod --config conf1s.conf ; mongod --config conf2s.conf" >> servers.
 RUN echo "sh.addShard(\"localhost:27021\");" > init.js
 RUN echo "sh.addShard(\"localhost:27022\");" >> init.js
 RUN echo "sh.enableSharding(\"test\");" >> init.js
-RUN echo "sh.shardCollection(\"test.restaurants\", { \"borough\" : \"hashed\" });" >> init.js
+RUN echo "sh.shardCollection(\"test.restaurants\", { \"borough\" : 1 });" >> init.js
 RUN echo "sh.splitAt(\"test.restaurants\", { \"borough\" : \"D\" });" >> init.js
 
 RUN echo "sleep 5; mongo --port 27020 init.js" >> servers.sh
